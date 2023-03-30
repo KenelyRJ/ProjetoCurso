@@ -1,5 +1,6 @@
 package br.edu.ifms.ProjetoCurso.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -12,8 +13,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 @Entity
-public class Turma {
-	
+public class Turma implements Serializable{
+
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,8 +23,8 @@ public class Turma {
 	@ManyToMany
 	@JoinTable(			
 			name="Turma_profe",
-			joinColumns = @JoinColumn(name="professor_id"),
-			inverseJoinColumns = @JoinColumn(name= "disciplina_id")			
+			joinColumns = @JoinColumn(name="turma_id"),
+			inverseJoinColumns = @JoinColumn(name= "professor_id")			
 			)
 	private List<Professor> professores = new ArrayList<Professor>();
 	
@@ -36,6 +37,37 @@ public class Turma {
 		super();
 		this.id = id;
 		this.nome = nome;
+	}
+
+	
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public String getNome() {
+		return nome;
+	}
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public List<Professor> getProfessores() {
+		return professores;
+	}
+
+
+	public void setProfessores(List<Professor> professores) {
+		this.professores = professores;
 	}
 
 

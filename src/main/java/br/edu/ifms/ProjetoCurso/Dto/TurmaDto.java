@@ -1,18 +1,18 @@
 package br.edu.ifms.ProjetoCurso.Dto;
 
-public class ProfessorDto {
+public class TurmaDto {
 	
 	
 	private Long id;
 	private String nome;
 	
 
-	public ProfessorDto() {
+	public TurmaDto() {
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public ProfessorDto(Long id, String nome) {
+	public TurmaDto(Long id, String nome) {
 		super();
 		this.id = id;
 		this.nome = nome;

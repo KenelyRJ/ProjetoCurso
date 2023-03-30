@@ -21,9 +21,7 @@ public class Professor  implements Serializable {
 	private String nome;
 	@ManyToMany(mappedBy = "professores")
 	private List<Turma> turmas = new ArrayList<Turma>();
-
-
-		public Professor(Long id, String nome, String disciplina) {
+	public Professor(Long id, String nome, String disciplina) {
 			super();
 			this.id = id;
 			this.nome = nome;
@@ -37,16 +35,9 @@ public class Professor  implements Serializable {
 		}
 
 
-
-
-
 		public void setId(Long id) {
 			this.id = id;
 		}
-
-
-
-
 
 		public String getNome() {
 			return nome;
