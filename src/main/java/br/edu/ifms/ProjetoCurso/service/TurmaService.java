@@ -36,6 +36,9 @@ public class TurmaService {
 			return repositoryTurma.save(tra);
 		
 		
-		
+		}
+		public void remover(Long id) {
+			buscarId(id);
+			 repositoryTurma.deleteById(id);
 		}
 }

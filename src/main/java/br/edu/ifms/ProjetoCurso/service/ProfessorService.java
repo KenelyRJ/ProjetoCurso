@@ -34,6 +34,11 @@ public class ProfessorService {
 			profe.setNome(profe.getNome());
 			return repositoryProfessor.save(profe);
 		}
+		public void remover(Long id) {
+			buscarId(id);
+			 repositoryProfessor.deleteById(id);
+		}
+		
 		
 		
 		

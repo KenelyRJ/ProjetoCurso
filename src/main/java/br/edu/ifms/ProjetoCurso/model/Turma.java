@@ -26,6 +26,7 @@ public class Turma implements Serializable{
 			joinColumns = @JoinColumn(name="turma_id"),
 			inverseJoinColumns = @JoinColumn(name= "professor_id")			
 			)
+	//a turma possui uma lista de professores
 	private List<Professor> professores = new ArrayList<Professor>();
 	
 	public Turma() {
